@@ -1,0 +1,46 @@
+﻿1.
+jquery1.X版本可以兼容任何的浏览器  包括IE6.7.8 
+jquery2.X版本对IE6.7.8的兼容性不好
+所以平时如果不考虑IE浏览器的话可以使用jquery2.X  但是建议使用jqeury1.x版本！
+
+2.
+js的框架包很多  jquery只是其中之一  
+目前最先进的是extjs框架包 可以实现各种绚丽的效果！
+
+3.
+$(‘div’)  $(‘.apple’)  $(‘*’) $(’#id属性值‘)等等。选择器使用的过程就是函数调用过程。
+$符号就是一个函数，函数名称为”$”符号而已。
+(javascript里边$符号是变量名字的组成部分)
+也可以使用“jQuery”符号。
+$符号本质就是一个函数
+
+4.
+jquery对象：
+$('#id')  $('.aa')  .......等其他一切的选择器操作所获取的都是jquery对象；
+jquery对象其实是对dom对象的封装：  $('.aa')[0]  或者 $('.aa')[1] 这样就可以获取到jquery对象当中的dom对象；
+我们获取到dom对象然后再调取jquery里面的方法是不可取的  $('.aa')[0].css('color','red');是错误的  这就是相当于利用js当中的dom对象去访问了jquey当中的方法 如果想要使用这种方法 那么得要掌握js当中dom对象当中的方法的操作！方法如下：$('.aa')[0].style.backgroundColor = 'red';这相当于把jquery对象变成了dom对象来进行操作！
+而是要使用$('.aa').css('color','red');  这才是使用$('.aa')jquery对象去访问jqeury里面的方法css()的正确的操作！！！
+把jquery对象转变成dom对象：$('.aa')[0].style.backgroundColor = 'red';
+把dom对象转变成jqeury对象：
+var h2dom = document.getElementsByTagName('h2')[0];
+$(h2dom).css('color','red');  //$(dom对象选择器).css();
+
+5.
+jquery对象分析：
+jquery对象分为：jquery对象   $对象    ege：就是各种选择器创建出来的对象 $(div)$(.class) $(#id)
+通过各种选择器创建出来的jquery对象可以调用许多方法
+html()text()attr()css()addClass()removeClass()等等
+这些方法都是从哪来的？
+答:是通过fn.extend拷贝继承过来的。
+
+
+$也就是指jQuery  上边讲过$本身就是一个函数 也是一个对象； ege: $.get()
+$对象使用例如： $.get(url请求地址) ajax请求
+$本身就是函数，函数也是对象
+
+学会了js你可以去追jquery源码 先这样理解 会使用jqeury吧！
+
+
+
+
+
